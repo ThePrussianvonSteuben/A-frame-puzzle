@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+	<script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+
+    <title>Puzzle</title>
+
+</head>
+
+<body>
+
+    <a-scene renderer="colorManagement:true">
+
+        <a-assets>
+
+            <a-asset-item id="spruce-tree" src="assets/SpruceTree/SpruceTree.gltf">
+
+            </a-asset-item>
+
+            <a-asset-item id="oak-tree" src="assets/OakTree/OakTree.gltf">
+
+            </a-asset-item>
+
+            <a-asset-item id="bloodwood-tree" src="assets/BloodwoodTree/BloodwoodTree.gltf">
+            
+            </a-asset-item>
+
+            <a-asset-item id="elm-tree" src="assets/ElmTree/ElmTree.gltf">
+
+            </a-asset-item>
+
+            <a-asset-item id="mountain" src="assets/Mountain/Mountain_01.gltf">
+
+            </a-asset-item>
+
+            <a-asset-item id="AT-AT" src="assets/AT-AT/AT-AT.gltf">
+
+            </a-asset-item>
+
+            <a-asset-item id="master-yoda" src="assets/Yoda/yoda_rc.gltf">
+
+            </a-asset-item>
+
+            <a-asset-item id="tie-fighter" src="assets/TieFighter/TieFighter.gltf">
+
+            </a-asset-item>
+
+            <a-asset-item id="pond" src="assets/Pond/pond.gltf">
+
+            </a-asset-item> 
+            
+            <a-asset-item id="star-destroyer" src="assets/StarDestroyer/StarDestroyer.obj">
+
+            </a-asset-item>
+
+            <a-asset-item id="star-destroyer-mtl" src="assets/StarDestroyer/StarDestroyer.mtl">
+
+            </a-asset-item>
+
+            <a-asset-item id="astromech-droid" src="assets/Astromech/astromech.gltf">
+
+            </a-asset-item>
+
+            <a-asset-item id="clanka" src="assets/Clanka/model.gltf">
+
+            </a-asset-item>
+
+            <a-asset-item id="C3PO" src="assets/C3PO/C3PO.gltf">
+
+            </a-asset-item>
+
+            <a-asset-item id="Chewie" src="assets/Chewie/chewie.gltf">
+
+            </a-asset-item>
+
+            <a-asset-item id="storm-troopers" src="assets/StormTroopers/stormtrooper.gltf">
+
+            </a-asset-item>
+
+        </a-assets>
+
+        <a-sky src="assets/Textures/sky.png" repeat="1 1" scale="2 2 2">
+
+        </a-sky>
+
+        <a-plane src="assets/Textures/grass.jpg" repeat="10 10" position="0 -2 0" rotation="-90 0 0" height="300" width="300">
+
+        </a-plane>
+
+        <a-camera>
+
+			<a-entity cursor="fuse: true;" material="color: #8f8f8f; opacity: 0.80; shader: flat;" geometry="primitive: sphere; radius: 0.005;" position="0 0 -1" raycaster="far: 5; near: 1" animation__enter="property: scale; to: 3 3 3; dur: 1000; easing: linear; startEvents: mouseenter;" animation__leave="property: scale; to: 1 1 1; dur: 1000; easing: linear; startEvents: mouseleave;">
+
+			</a-entity>
+
+		</a-camera>
+        
+        <a-entity id="trees1">
+
+            <a-entity id="spruce1" gltf-model="#spruce-tree" position="-26 -2 40">
+
+            </a-entity>
+
+            <a-entity id="spruce2" gltf-model="#spruce-tree" position="54 -2 10" rotation="0 -35 0">
+
+            </a-entity>
+
+            <a-entity  id="spruce3" gltf-model="#spruce-tree" position="-2 -2 -40" rotation="0 -90 0">
+
+            </a-entity>
+
+            <a-entity id="oak1" gltf-model="#oak-tree" position="-20 -2 -20">
+
+            </a-entity>
+
+            <a-entity id="oak2" gltf-model="#oak-tree" position="0 -2 60" rotation="0 20 0">
+
+            </a-entity>
+            
+            <a-entity id="oak3" gltf-model="#oak-tree" position="22 -2 2" rotation="0 -40 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood1" gltf-model="#bloodwood-tree" position="-10 -2 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood2" gltf-model="#bloodwood-tree" position="50 -2 -16" rotation="0 50 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood3" gltf-model="#bloodwood-tree" position="34 -2 44" rotation="0 -135 0">
+
+            </a-entity>
+
+            <a-entity id="eml1" gltf-model="#elm-tree" position="-30 -2 10"> 
+
+            </a-entity>
+
+            <a-entity id="eml2" gltf-model="#elm-tree" position="24 -2 -30" rotation="0 -25 0"> 
+
+            </a-entity>
+
+            <a-entity id="eml3" gltf-model="#elm-tree" position="10 -2 30" rotation="0 50 0"> 
+
+            </a-entity>
+
+        </a-entity>
+
+        <a-entity id="trees2" position="-105 0 0">
+
+            <a-entity id="spruce1" gltf-model="#spruce-tree" position="-9 -2 34">
+
+            </a-entity>
+
+            <a-entity id="spruce2" gltf-model="#spruce-tree" position="54 -2 10" rotation="0 -35 0">
+
+            </a-entity>
+
+            <a-entity  id="spruce3" gltf-model="#spruce-tree" position="-2 -2 -40" rotation="0 -90 0">
+
+            </a-entity>
+
+            <a-entity id="oak1" gltf-model="#oak-tree" position="-14 -2 -20">
+
+            </a-entity>
+
+            <a-entity id="oak2" gltf-model="#oak-tree" position="0 -2 60" rotation="0 20 0">
+
+            </a-entity>
+            
+            <a-entity id="oak3" gltf-model="#oak-tree" position="22 -2 2" rotation="0 -40 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood1" gltf-model="#bloodwood-tree" position="-10 -2 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood2" gltf-model="#bloodwood-tree" position="50 -2 -16" rotation="0 50 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood3" gltf-model="#bloodwood-tree" position="34 -2 44" rotation="0 -135 0">
+
+            </a-entity>
+
+            <a-entity id="eml1" gltf-model="#elm-tree" position="-25 -2 18"> 
+
+            </a-entity>
+
+            <a-entity id="eml2" gltf-model="#elm-tree" position="24 -2 -30" rotation="0 -25 0"> 
+
+            </a-entity>
+
+            <a-entity id="eml3" gltf-model="#elm-tree" position="10 -2 30" rotation="0 50 0"> 
+
+            </a-entity>
+
+        </a-entity>
+
+        <a-entity id="trees3" position="105 0 0">
+
+            <a-entity id="spruce1" gltf-model="#spruce-tree" position="-26 -2 40">
+
+            </a-entity>
+
+            <a-entity  id="spruce3" gltf-model="#spruce-tree" position="-2 -2 -40" rotation="0 -90 0">
+
+            </a-entity>
+
+            <a-entity id="oak1" gltf-model="#oak-tree" position="-20 -2 -20">
+
+            </a-entity>
+
+            <a-entity id="oak2" gltf-model="#oak-tree" position="0 -2 60" rotation="0 20 0">
+
+            </a-entity>
+            
+            <a-entity id="oak3" gltf-model="#oak-tree" position="22 -2 2" rotation="0 -40 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood1" gltf-model="#bloodwood-tree" position="-10 -2 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood3" gltf-model="#bloodwood-tree" position="30 -2 40" rotation="0 -135 0">
+
+            </a-entity>
+
+            <a-entity id="eml1" gltf-model="#elm-tree" position="-30 -2 10"> 
+
+            </a-entity>
+
+            <a-entity id="eml2" gltf-model="#elm-tree" position="24 -2 -30" rotation="0 -25 0"> 
+
+            </a-entity>
+
+            <a-entity id="eml3" gltf-model="#elm-tree" position="10 -2 30" rotation="0 50 0"> 
+
+            </a-entity>
+
+        </a-entity>
+
+        <a-entity id="trees4" position="45 0 106">
+
+            <a-entity  id="spruce3" gltf-model="#spruce-tree" position="-2 -2 -40" rotation="0 -90 0">
+
+            </a-entity>
+
+            <a-entity id="oak1" gltf-model="#oak-tree" position="-20 -2 -20">
+
+            </a-entity>
+            
+            <a-entity id="oak3" gltf-model="#oak-tree" position="22 -2 2" rotation="0 -40 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood1" gltf-model="#bloodwood-tree" position="-10 -2 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood2" gltf-model="#bloodwood-tree" position="50 -2 -16" rotation="0 50 0">
+
+            </a-entity>
+
+            <a-entity id="eml1" gltf-model="#elm-tree" position="-30 -2 10"> 
+
+            </a-entity>
+
+            <a-entity id="eml2" gltf-model="#elm-tree" position="24 -2 -30" rotation="0 -25 0"> 
+
+            </a-entity>
+
+        </a-entity>
+
+        <a-entity id="trees5" position="-69 0 109">
+
+            <a-entity id="spruce2" gltf-model="#spruce-tree" position="54 -2 10" rotation="0 -35 0">
+
+            </a-entity>
+
+            <a-entity  id="spruce3" gltf-model="#spruce-tree" position="-2 -2 -40" rotation="0 -90 0">
+
+            </a-entity>
+
+            <a-entity id="oak1" gltf-model="#oak-tree" position="-20 -2 -20">
+
+            </a-entity>
+            
+            <a-entity id="oak3" gltf-model="#oak-tree" position="22 -2 2" rotation="0 -40 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood1" gltf-model="#bloodwood-tree" position="-10 -2 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood2" gltf-model="#bloodwood-tree" position="50 -2 -16" rotation="0 50 0">
+
+            </a-entity>
+
+            <a-entity id="eml1" gltf-model="#elm-tree" position="-30 -2 10"> 
+
+            </a-entity>
+
+            <a-entity id="eml2" gltf-model="#elm-tree" position="24 -2 -30" rotation="0 -25 0"> 
+
+            </a-entity>
+
+        </a-entity>
+
+        <a-entity id="trees6" position="-177 0 92">
+
+            <a-entity id="spruce2" gltf-model="#spruce-tree" position="57 -2 10" rotation="0 -35 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood2" gltf-model="#bloodwood-tree" position="64 -2 -9" rotation="0 50 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood3" gltf-model="#bloodwood-tree" position="59 -2 32" rotation="0 -170 0">
+
+            </a-entity>
+
+        </a-entity>
+
+        <a-entity id="trees7" position="140 0 107">
+
+            <a-entity  id="spruce3" gltf-model="#spruce-tree" position="-17 -2 -40" rotation="0 -90 0">
+
+            </a-entity>
+
+            <a-entity id="oak1" gltf-model="#oak-tree" position="-20 -2 -20">
+
+            </a-entity>
+
+            <a-entity id="bloodwood1" gltf-model="#bloodwood-tree" position="-10 -2 0">
+
+            </a-entity>
+
+            <a-entity id="eml1" gltf-model="#elm-tree" position="-30 -2 10"> 
+
+            </a-entity>
+
+        </a-entity>
+
+        <a-entity id="trees8" position="-54 0 -99">
+
+            <a-entity id="spruce1" gltf-model="#spruce-tree" position="-26 -2 40">
+
+            </a-entity>
+
+            <a-entity id="spruce2" gltf-model="#spruce-tree" position="54 -2 10" rotation="0 -35 0">
+
+            </a-entity>
+
+            <a-entity  id="spruce3" gltf-model="#spruce-tree" position="1.5 -2 -26" rotation="0 -90 0">
+
+            </a-entity>
+
+            <a-entity id="oak1" gltf-model="#oak-tree" position="-29 -2 -16">
+
+            </a-entity>
+
+            <a-entity id="oak2" gltf-model="#oak-tree" position="0 -2 60" rotation="0 20 0">
+
+            </a-entity>
+            
+            <a-entity id="oak3" gltf-model="#oak-tree" position="22 -2 2" rotation="0 -40 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood1" gltf-model="#bloodwood-tree" position="-10 -2 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood2" gltf-model="#bloodwood-tree" position="50 -2 -16" rotation="0 50 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood3" gltf-model="#bloodwood-tree" position="34 -2 44" rotation="0 -135 0">
+
+            </a-entity>
+
+            <a-entity id="eml1" gltf-model="#elm-tree" position="-30 -2 10"> 
+
+            </a-entity>
+
+            <a-entity id="eml2" gltf-model="#elm-tree" position="24 -2 -30" rotation="0 -25 0"> 
+
+            </a-entity>
+
+            <a-entity id="eml3" gltf-model="#elm-tree" position="10 -2 30" rotation="0 50 0"> 
+
+            </a-entity>
+
+        </a-entity>
+
+        <a-entity id="trees9" position="51 0 -99">
+
+            <a-entity id="spruce1" gltf-model="#spruce-tree" position="-26 -2 40">
+
+            </a-entity>
+
+            <a-entity id="spruce2" gltf-model="#spruce-tree" position="54 -2 10" rotation="0 -35 0">
+
+            </a-entity>
+
+            <a-entity  id="spruce3" gltf-model="#spruce-tree" position="-2 -2 -37" rotation="0 -90 0">
+
+            </a-entity>
+
+            <a-entity id="oak1" gltf-model="#oak-tree" position="-20 -2 -20">
+
+            </a-entity>
+
+            <a-entity id="oak2" gltf-model="#oak-tree" position="0 -2 60" rotation="0 20 0">
+
+            </a-entity>
+            
+            <a-entity id="oak3" gltf-model="#oak-tree" position="22 -2 2" rotation="0 -40 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood1" gltf-model="#bloodwood-tree" position="-10 -2 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood2" gltf-model="#bloodwood-tree" position="50 -2 -16" rotation="0 50 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood3" gltf-model="#bloodwood-tree" position="34 -2 44" rotation="0 -135 0">
+
+            </a-entity>
+
+            <a-entity id="eml1" gltf-model="#elm-tree" position="-30 -2 10"> 
+
+            </a-entity>
+
+            <a-entity id="eml2" gltf-model="#elm-tree" position="24 -2 -26" rotation="0 -25 0"> 
+
+            </a-entity>
+
+            <a-entity id="eml3" gltf-model="#elm-tree" position="10 -2 30" rotation="0 50 0"> 
+
+            </a-entity>
+
+        </a-entity>
+
+        <a-entity id="trees10" position="-158 0 -99">
+
+            <a-entity id="spruce2" gltf-model="#spruce-tree" position="54 -2 10" rotation="0 -35 0">
+
+            </a-entity>
+
+            <a-entity id="oak3" gltf-model="#oak-tree" position="35 -2 10" rotation="0 -40 0">
+
+            </a-entity>
+
+            <a-entity id="bloodwood1" gltf-model="#bloodwood-tree" position="48 -2 -22">
+
+            </a-entity>
+
+            <a-entity id="bloodwood3" gltf-model="#bloodwood-tree" position="34 -2 44" rotation="0 -135 0">
+
+            </a-entity>
+
+            <a-entity id="eml2" gltf-model="#elm-tree" position="29 -2 -16" rotation="0 -25 0"> 
+
+            </a-entity>
+
+        </a-entity>
+
+        <a-entity id="trees11" position="155 0 -99">
+
+            <a-entity id="spruce1" gltf-model="#spruce-tree" position="-33 -2 43">
+
+            </a-entity>
+
+            <a-entity id="oak1" gltf-model="#oak-tree" position="-33 -2 -20">
+
+            </a-entity>
+
+            <a-entity id="eml1" gltf-model="#elm-tree" position="-49 -2 25"> 
+
+            </a-entity>
+
+        </a-entity>
+
+        <a-entity id="mountains1">
+
+            <a-entity id="mountain1" gltf-model="#mountain" position="0 -2.129 155" scale="10 5 15">
+
+            </a-entity>
+
+            <a-entity id="mountain2" gltf-model="#mountain" position="-70 -2.129 155" scale="13 6 12">
+
+            </a-entity>
+
+            <a-entity id="mountain3" gltf-model="#mountain" position="78 -2.129 155" scale="10 4 13" rotation="0 180 0">
+
+            </a-entity>
+
+            <a-entity id="mountain4" gltf-model="#mountain" position="-118 -2.129 155" scale="6 3 11">
+
+            </a-entity>
+            
+            <a-entity id="mountain5" gltf-model="#mountain" position="142.20 -2.129 155" scale="10 4.12 13" rotation="0 180 0">
+
+            </a-entity>
+
+        </a-entity>
+
+        <a-entity id="mountains2" rotation="0 180 0" position="0 0 -3.625">
+
+            <a-entity id="mountain1" gltf-model="#mountain" position="0 -2.129 155" scale="10 5 15">
+
+            </a-entity>
+
+            <a-entity id="mountain2" gltf-model="#mountain" position="-70 -2.129 155" scale="13 4 12">
+
+            </a-entity>
+
+            <a-entity id="mountain3" gltf-model="#mountain" position="78 -2.129 155" scale="10 4 13" rotation="0 180 0">
+
+            </a-entity>
+
+            <a-entity id="mountain4" gltf-model="#mountain" position="-119 -2.129 155" scale="6 6 11" rotation="0 -90 0">
+
+            </a-entity>
+            
+            <a-entity id="mountain5" gltf-model="#mountain" position="142.20 -2.129 155" scale="10 4.12 13" rotation="0 180 0">
+
+            </a-entity>
+
+        </a-entity>
+
+        <a-entity id="mountains3" rotation="0 90 0">
+
+            <a-entity id="mountain1" gltf-model="#mountain" position="0 -2.129 155" scale="10 5 10">
+
+            </a-entity>
+
+            <a-entity id="mountain2" gltf-model="#mountain" position="-70 -2.129 155" scale="13 4 12">
+
+            </a-entity>
+
+            <a-entity id="mountain3" gltf-model="#mountain" position="78 -2.129 155" scale="10 5 13" rotation="0 180 0">
+
+            </a-entity>
+
+            <a-entity id="mountain4" gltf-model="#mountain" position="-116 -2.129 155" scale="6 4 11">
+
+            </a-entity>
+            
+            <a-entity id="mountain5" gltf-model="#mountain" position="142.20 -2.129 155" scale="10 4.12 13" rotation="0 180 0">
+
+            </a-entity>
+
+        </a-entity>
+
+        <a-entity id="mountains4" rotation="0 -90 0">
+
+            <a-entity id="mountain1" gltf-model="#mountain" position="0 -2.129 155" scale="10 5 15">
+
+            </a-entity>
+
+            <a-entity id="mountain2" gltf-model="#mountain" position="-70 -2.129 155" scale="13 4 12">
+
+            </a-entity>
+
+            <a-entity id="mountain3" gltf-model="#mountain" position="78 -2.129 155" scale="10 4 13" rotation="0 180 0">
+
+            </a-entity>
+
+            <a-entity id="mountain4" gltf-model="#mountain" position="-118 -2.129 155" scale="6 3 11">
+
+            </a-entity>
+            
+            <a-entity id="mountain5" gltf-model="#mountain" position="142.20 -2.129 155" scale="10 4.12 13" rotation="0 180 0">
+
+            </a-entity>
+
+        </a-entity>
+
+        <a-entity id="pond" gltf-model="#pond" position="100 -1.422 -100" scale="5 5 5">
+
+        </a-entity>
+
+        <a-entity id="tie-fighters" position="0 0 0" animation="property:rotation;to: 0 360 0;loop:true;dur:30000;easing:linear;">
+
+            <a-entity id="Tie-Fighter1" visible="false" gltf-model="#tie-fighter" position="-140 60 0" rotation="0 0 -10">
+
+                <a-entity id="Tie-Fighter2" visible="false" gltf-model="#tie-fighter" position="20 -1.5 -20">
+    
+                </a-entity>
+    
+                <a-entity id="Tie-Fighter3" visible="false" gltf-model="#tie-fighter" position="-20 1.5 -20" >
+    
+                </a-entity>
+    
+            </a-entity>
+
+        </a-entity>
+
+        <a-entity id="AT-AT" gltf-model="#AT-AT" scale="1 1 1" position="31 -4.4 -108">
+
+        </a-entity>
+
+        <a-entity id="storm-troopers1" gltf-model="#storm-troopers" position="-1 0.627 -76" scale="8 8 8">
+
+        </a-entity>
+
+        <a-entity id="storm-troopers2" visible="false" gltf-model="#storm-troopers" position="-34 0.627 -76" scale="8 8 8">
+
+        </a-entity>
+
+        <a-entity id="Star-Destroyer" visible="false" obj-model="obj: #star-destroyer; mtl: #star-destroyer-mtl;" position="-300 250 -300" rotation="0 90 0" scale=".5 .5 .5" animation="property: position; to: 400 250 -300; loop: false; dur:150000;easing:linear;">
+
+        </a-entity>
+
+        <a-entity id="Astromech-droid" gltf-model="#astromech-droid" position="7.8 -23.5 11" scale="20 20 20" rotation="0 -221 0"  event-set__targetvisibility="_event: click; _target: #clue1; visible: true;" event-set__leave="_event: mouseleave; _target: #clue1; visible: false;">
+
+        </a-entity>
+
+        <a-entity id="clanka" gltf-model="#clanka" scale="5 5 5" position="105.5 -1.605 -105" event-set__targetvisibility="_event: click; _target: #puzzle_complete; visible: true;" event-set__mouseleave=" _event: mouseleave; _target: #puzzle_complete; visible: false;" event-set__stardestroyervisibility="_event: click; _target: #Star-Destroyer; visible: true;" event-set__tiefighter1visibility="_event: click; _target: #Tie-Fighter1; visible: true;" event-set__tiefighter2visibility="_event: click; _target: #Tie-Fighter2; visible: true;" event-set__tiefighter3visibility="_event: click; _target: #Tie-Fighter3; visible: true;" event-set__stormtroopervisibility="_event: click; _target: #storm-troopers2; visible: true;">
+
+        </a-entity>
+
+        <a-entity id="master-yoda"  gltf-model="#master-yoda" position="-121 -2.913 132" scale=".1 .1 .1" rotation="-90 10 0" event-set__targetvisibility="_event: click; _target: #clue3; visible: true" event-set__leave="_event: mouseleave; _target: #clue3; visible: false;">
+
+        </a-entity>
+
+        <a-entity id="C3PO"  gltf-model="#C3PO" position="117 0.820 113" rotation="0 160 0" scale="0.04 0.04 0.04" event-set__targetvisibility="_event: click; _target: #clue2; visible: true" event-set__leave="_event: mouseleave; _target: #clue2; visible: false;">
+
+        </a-entity>
+
+        <a-entity id="Chewie" gltf-model="#Chewie" position="121 0.820 110" rotation="0 200 0" scale="0.04 0.04 0.04" event-set__targetvisibility="_event: click; _target: #Chewie_roar; visible: true" event-set__leave="_event: mouseleave; _target: #Chewie_roar; visible: false;">
+
+        </a-entity>
+
+        <a-text id="clue1" visible="false" side="double" value="Welcome to Rafi's Puzzle! Please wait 10 or so seconds and spin around so to allow all the assets to be rendered. This prevents subsequent frame drops from occuring later while playing. First clue: My exterior is gold, my heart is cold. Aiding human-cyborg relations is my task. My friend the rug wouldn't be able to about it even if you ask." color="#ffc800" position="-1.76 0.813 -4.691" scale="0.75 1 1" rotation="0 14.020 0">
+
+        </a-text>
+
+        <a-text id="Chewie_roar" visible="false" side="double" value="RAAAAAWRGH!!" color="#ffc800" position="122.8 2.795 107.1" scale="5 5 5" rotation="0 232 0">
+
+        </a-text>
+
+        <a-text id="clue2" visible="false" side="double" value="Second clue: mmMHHHMmmm. Backflip I do. Commit warcrimes I must." color="#ffc800" position="117 2.8 110.8" scale="0.75 1 1" rotation="0 232 0">
+
+        </a-text>
+
+        <a-text id="clue3" visible="false" side="double" value="Third clue; A remnant from a war long past, battles in the Clone Wars were fought by these droids. Executes every command with a 'Roger Roger'" color="#ffc800" position="-117.82 1.684 130.76" rotation="0 156 0" scale="0.75 1 1">
+
+        </a-text>
+
+        <a-text id="puzzle_complete" visible="false" side="double" value="Congratulations! You have completed the puzzle. Air superiority achieved. Reinforcements inbound." color="#ffc800" position="106.9 0 -105" scale="0.75 1 1" rotation="0 180 0" event-set__targetvisibility="_event: click; _target: #Star-Destroyer; visible: true">
+
+        </a-text>
+
+    </a-scene>
+    
+</body>
+
+</html>
+
